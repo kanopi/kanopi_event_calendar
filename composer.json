@@ -1,0 +1,14 @@
+{
+  "name": "drupal/kanopi_event_calendar",
+  "type": "drupal-module",
+  "description": "Drupal 8 module that installs an Events Content Type and Calendar views.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/kanopi_event_calendar",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/kanopi_event_calendar",
+    "source": "http://cgit.drupalcode.org/kanopi_event_calendar"
+  },
+  "require": { }
+}

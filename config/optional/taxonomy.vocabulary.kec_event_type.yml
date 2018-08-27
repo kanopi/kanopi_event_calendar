@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Event Type'
+vid: kec_event_type
+description: 'Taxonomy for sorting events'
+hierarchy: 0
+weight: 0

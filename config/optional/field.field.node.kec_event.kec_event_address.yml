@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.kec_event_address
+    - node.type.kec_event
+id: node.kec_event.kec_event_address
+field_name: kec_event_address
+entity_type: node
+bundle: kec_event
+label: Address
+description: 'Address of the event.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

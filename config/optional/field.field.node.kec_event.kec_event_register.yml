@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.kec_event_register
+    - node.type.kec_event
+  module:
+    - link
+id: node.kec_event.kec_event_register
+field_name: kec_event_register
+entity_type: node
+bundle: kec_event
+label: 'Register Link'
+description: 'Add a link where people can register for this event.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

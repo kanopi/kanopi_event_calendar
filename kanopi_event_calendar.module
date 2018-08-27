@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains kanopi_event_calendar.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function kanopi_event_calendar_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the kanopi_event_calendar module.
+    case 'help.page.kanopi_event_calendar':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Drupal 8 module thaty installs Events Content Type and Calendar views.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function kanopi_event_calendar_theme() {
+  return [
+    'kanopi_event_calendar' => [
+      'render element' => 'children',
+    ],
+  ];
+}

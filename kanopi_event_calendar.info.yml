@@ -1,0 +1,20 @@
+name: 'Kanopi Event Calendar'
+type: module
+description: 'Drupal 8 module that installs an Events Content Type and Calendar views.'
+core: 8.x
+package: 'Event'
+dependencies:
+  - drupal:datetime
+  - drupal:field
+  - drupal:image
+  - drupal:link
+  - drupal:media
+  - drupal:node
+  - drupal:path
+  - drupal:system
+  - drupal:taxonomy
+  - drupal:text
+  - drupal:views
+  - entity_browser:entity_browser
+  - entity_browser:entity_browser_entity_form
+  - pathauto:pathauto

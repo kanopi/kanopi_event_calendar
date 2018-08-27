@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: kec_image
+label: Image
+description: 'Event Image'
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: kec_media_image
+field_map: {  }
