@@ -1,6 +1,6 @@
 {
   "name": "kanopi/kanopi_event_calendar",
-  "type": "drupal-module",
+  "type": "drupal-custom-module",
   "description": "Drupal 8 module that installs an Events Content Type and Calendar views.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
