@@ -1,0 +1,23 @@
+diff --git a/date_recur/src/Plugin/views/row/DateRecurCalendar.php b/src/Plugin/views/row/DateRecurCalendar.php
+index 977034b0d..3e81267e2 100644
+--- a/src/Plugin/views/row/DateRecurCalendar.php
++++ b/src/Plugin/views/row/DateRecurCalendar.php
+@@ -409,6 +409,18 @@ public function render($row) {
+               // so we can continue adding date items with the next field.
+               continue;
+             }
++          }  else {
++            // Does not have occurrences, but may be one of multiple values:
++            //   - A multi-day event
++            //   - An event with multiple deltas not entered using a repeat rule.
++
++            // Determine the correct delta to use
++            $row_value = $row->{$info['query_name']};
++            foreach ($field->getValue() as $key => $value) {
++              if ($value['value'] == $row_value) {
++                $delta = $key;
++              }
++            }
+           }
+         }
+         // "Date" and "DateRange" support.

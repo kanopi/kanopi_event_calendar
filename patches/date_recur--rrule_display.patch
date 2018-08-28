@@ -1,0 +1,157 @@
+diff --git a/src/DateRecurDefaultRSet.php b/src/DateRecurDefaultRSet.php
+index 2ebbee4..ffa89b2 100644
+--- a/src/DateRecurDefaultRSet.php
++++ b/src/DateRecurDefaultRSet.php
+@@ -3,30 +3,31 @@ namespace Drupal\date_recur;
+ 
+ use RRule\RRule;
+ use RRule\RSet;
++use Drupal\Core\StringTranslation\TranslatableMarkup;
+ 
+ class DateRecurDefaultRSet extends RSet {
+ 
+-  public function humanReadable() {
++  public function humanReadable($format_type = 'short') {
+     $text = $this->rrules[0]->humanReadable();
++    $string = $text->getUntranslatedString();
++    $arguments = $text->getArguments();
+     if (!empty($this->rdates)) {
+       $dates = [];
+       foreach ($this->rdates as $date) {
+-        $dates[] = $this->formatDateForDisplay($date);
++        $dates[] = $this->formatDateForDisplay($date, $format_type);
+       }
+-      $text .= ', ' . t('and also on: @dates', [
+-          '@dates' => implode(', ', $dates)
+-        ]);
++      $string .= ', and also on: @dates';
++      $arguments['@dates'] = implode(', ', $dates);
+     }
+     if (!empty($this->exdates)) {
+       $exdates = [];
+       foreach ($this->exdates as $date) {
+-        $exdates[] = $this->formatDateForDisplay($date);
++        $exdates[] = $this->formatDateForDisplay($date, $format_type);
+       }
+-      $text .= ', ' . t('but not on: @dates', [
+-          '@dates' => implode(', ', $exdates)
+-      ]);
++      $string .= ', but not on: @exdates';
++      $arguments['@exdates'] = implode(', ', $exdates);
+     }
+-    return $text;
++    return new TranslatableMarkup($string, $arguments);
+   }
+ 
+   public function setTimezoneOffset($offset) {
+@@ -85,8 +86,11 @@ class DateRecurDefaultRSet extends RSet {
+   }
+ 
+   protected function formatDateForDisplay(\DateTime $date, $format = 'd.m.Y') {
++    // TODO: Properly inject this service
++    $dateFormatter = \Drupal::service('date.formatter');
+     if (empty($this->getTimezone())) {
+-      return $date->format($format);
++      //return $date->format($format);
++      return $dateFormatter->format($date->getTimestamp(), $format, '', NULL);
+     }
+     return $date->setTimezone(new \DateTimeZone($this->getTimezone()))->format($format);
+   }
+diff --git a/src/DateRecurRRule.php b/src/DateRecurRRule.php
+index 86ea4b9..f6d10db 100644
+--- a/src/DateRecurRRule.php
++++ b/src/DateRecurRRule.php
+@@ -368,8 +368,8 @@ class DateRecurRRule implements \Iterator {
+    *
+    * @return string
+    */
+-  public function humanReadable() {
+-    return $this->rrule->humanReadable();
++  public function humanReadable($format_type = 'short') {
++    return $this->rrule->humanReadable($format_type);
+   }
+ 
+   /**
+diff --git a/src/Plugin/DateRecurOccurrenceHandler/DefaultDateRecurOccurrenceHandler.php b/src/Plugin/DateRecurOccurrenceHandler/DefaultDateRecurOccurrenceHandler.php
+index 3ba1869..b0f974f 100644
+--- a/src/Plugin/DateRecurOccurrenceHandler/DefaultDateRecurOccurrenceHandler.php
++++ b/src/Plugin/DateRecurOccurrenceHandler/DefaultDateRecurOccurrenceHandler.php
+@@ -130,11 +130,11 @@ class DefaultDateRecurOccurrenceHandler extends PluginBase implements DateRecurO
+   /**
+    * {@inheritdoc}
+    */
+-  public function humanReadable() {
++  public function humanReadable($format = 'short') {
+     if (empty($this->item) || !$this->isRecurring) {
+       return '';
+     }
+-    return $this->rruleObject->humanReadable();
++    return $this->rruleObject->humanReadable($format);
+   }
+ 
+   public function getWeekdays() {
+@@ -389,8 +389,8 @@ class DefaultDateRecurOccurrenceHandler extends PluginBase implements DateRecurO
+           if (!empty($column_data[$key]['table'])) {
+             $column_data[$key]['table'] = $recur_table_name;
+             $column_data[$key]['additional fields'] = [
+-              $field_name . '_value',
+-              $field_name . '_end_value',
++              'field_date_value',
++              'field_date_end_value',
+               'delta',
+               'field_delta'
+             ];
+diff --git a/src/Plugin/Field/FieldFormatter/DateRecurDefaultFormatter.php b/src/Plugin/Field/FieldFormatter/DateRecurDefaultFormatter.php
+index 456769f..90d890a 100644
+--- a/src/Plugin/Field/FieldFormatter/DateRecurDefaultFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/DateRecurDefaultFormatter.php
+@@ -33,7 +33,6 @@ class DateRecurDefaultFormatter extends DateRangeDefaultFormatter {
+       'show_rrule' => TRUE,
+       'show_next' => 5,
+       'occurrence_format_type' => 'medium',
+-      'same_end_date_format_type' => 'medium',
+       'count_per_item' => TRUE,
+     ] + parent::defaultSettings();
+   }
+@@ -74,9 +73,6 @@ class DateRecurDefaultFormatter extends DateRangeDefaultFormatter {
+     $form['occurrence_format_type'] = $form['format_type'];
+     $form['occurrence_format_type']['#title'] .=  ' ' . t('(Occurrences)');
+     $form['occurrence_format_type']['#default_value'] = $this->getSetting('occurrence_format_type');
+-    $form['same_end_date_format_type'] = $form['format_type'];
+-    $form['same_end_date_format_type']['#title'] .=  ' ' . t('(End date if same day as start date)');
+-    $form['same_end_date_format_type']['#default_value'] = $this->getSetting('same_end_date_format_type');
+     return $form;
+   }
+ 
+@@ -104,9 +100,6 @@ class DateRecurDefaultFormatter extends DateRangeDefaultFormatter {
+     if ($isOccurrence) {
+       $start_date->_dateRecurIsOccurrence = $end_date->_dateRecurIsOccurrence = TRUE;
+     }
+-    if ($start_date->format('Ymd') == $end_date->format('Ymd')) {
+-      $end_date->_same_end_date = TRUE;
+-    }
+     if ($start_date->format('U') !== $end_date->format('U')) {
+       $element = [
+         'start_date' => $this->buildDateWithIsoAttribute($start_date),
+@@ -121,10 +114,7 @@ class DateRecurDefaultFormatter extends DateRangeDefaultFormatter {
+   }
+ 
+   protected function formatDate($date) {
+-    if (!empty($date->_same_end_date)) {
+-      $format_type = $this->getSetting('same_end_date_format_type');
+-    }
+-    else if (empty($date->_dateRecurIsOccurrence)) {
++    if (empty($date->_dateRecurIsOccurrence)) {
+       $format_type = $this->getSetting('format_type');
+     }
+     else {
+@@ -176,7 +166,8 @@ class DateRecurDefaultFormatter extends DateRangeDefaultFormatter {
+     }
+ 
+     if ($this->getSetting('show_rrule') && !empty($item->rrule)) {
+-      $build['#repeatrule'] = $item->getOccurrenceHandler()->humanReadable();
++      $format_type = $this->getSetting('format_type');
++      $build['#repeatrule'] = $item->getOccurrenceHandler()->humanReadable($format_type);
+     }
+ 
+     $build['#occurrences'] = $this->viewOccurrences($item);
