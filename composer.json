@@ -12,8 +12,8 @@
   },
   "require": {
     "drupal/address": "^1.0.0",
-    "drupal/date_recur": "^1.0@alpha",
-    "drupal/calendar": "1.x-dev",
+    "drupal/date_recur": "^1.0@alpha#8bd0ca3754ae991029ec0f5592a037d70df4ffa1",
+    "drupal/calendar": "1.x-dev#73e2979f3ed951b1fb3ad942e2d89d673aa52e1d",
     "drupal/media_entity_browser": "^2.0",
     "drupal/metatag": "^1.5",
     "drupal/pathauto": "^1.0",
