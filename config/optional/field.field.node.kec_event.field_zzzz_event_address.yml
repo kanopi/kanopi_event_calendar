@@ -1,0 +1,36 @@
+uuid: 4fad838a-a58f-43cf-b40a-cbef6089fe36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zzzz_event_address
+    - node.type.kec_event
+  module:
+    - address
+id: node.kec_event.field_zzzz_event_address
+field_name: field_zzzz_event_address
+entity_type: node
+bundle: kec_event
+label: 'Event Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries:
+    US: US
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    sortingCode:
+      override: hidden
+    dependentLocality:
+      override: hidden
+  fields: {  }
+field_type: address

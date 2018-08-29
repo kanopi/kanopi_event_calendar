@@ -1,9 +1,12 @@
+uuid: 9adabfe2-5b5c-4748-8a8b-7ac6339b33f5
 langcode: en
 status: true
 dependencies:
   module:
     - link
     - node
+_core:
+  default_config_hash: XH23LI7N9FKkAI7q0ovK1V0aPgU6C_tVIcL9_4s3IXE
 id: node.kec_event_register
 field_name: kec_event_register
 entity_type: node

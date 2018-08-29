@@ -1,3 +1,4 @@
+uuid: 56c1dd1d-d82f-432e-b0b5-7acdcbe5512c
 langcode: en
 status: true
 dependencies:
@@ -5,11 +6,13 @@ dependencies:
     - field.storage.node.kec_event_image
     - media.type.kec_image
     - node.type.kec_event
+_core:
+  default_config_hash: iTrvCXqnSAPKxF-XnxSRcs98VKP7jMqGSKy0bS2y3Uw
 id: node.kec_event.kec_event_image
 field_name: kec_event_image
 entity_type: node
 bundle: kec_event
-label: Event Image
+label: 'Event Image'
 description: ''
 required: false
 translatable: false

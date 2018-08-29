@@ -1,0 +1,22 @@
+uuid: 68d958a0-0ef9-4255-b6fb-e8334ad03034
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: kec_events
+label: Events
+type: 'canonical_entities:node'
+pattern: 'events/[node:title]'
+selection_criteria:
+  56388a47-10f0-43a4-9b5b-82176c3c575f:
+    id: node_type
+    bundles:
+      kec_event: kec_event
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 56388a47-10f0-43a4-9b5b-82176c3c575f
+selection_logic: and
+weight: -5
+relationships: {  }

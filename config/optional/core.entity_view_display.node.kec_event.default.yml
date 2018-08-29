@@ -1,51 +1,60 @@
+uuid: 4cda6664-4ef1-4664-8fe0-f567bb80fb49
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.kec_event.field_zzzz_event_address
+    - field.field.node.kec_event.field_zzzz_event_date
     - field.field.node.kec_event.kec_body
-    - field.field.node.kec_event.kec_event_address
-    - field.field.node.kec_event.kec_event_date
     - field.field.node.kec_event.kec_event_image
     - field.field.node.kec_event.kec_event_register
     - field.field.node.kec_event.kec_event_related
     - field.field.node.kec_event.kec_event_type
     - node.type.kec_event
   module:
-    - datetime
+    - address
+    - date_recur
     - link
     - text
+    - user
+_core:
+  default_config_hash: gbw0mdWyIvD1uSjWkIpnQ8azxRuZnMtIQviVhshYaHA
 id: node.kec_event.default
 targetEntityType: node
 bundle: kec_event
 mode: default
 content:
+  field_zzzz_event_address:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_zzzz_event_date:
+    weight: 3
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: short
+      separator: '-'
+      show_next: '0'
+      occurrence_format_type: medium
+      show_rrule: 0
+      count_per_item: 0
+    third_party_settings: {  }
+    type: date_recur_default_formatter
+    region: content
   kec_body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
-  kec_event_address:
-    weight: 4
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  kec_event_date:
-    weight: 2
-    label: hidden
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   kec_event_image:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: default
@@ -64,25 +73,14 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  kec_event_related:
-    weight: 7
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   kec_event_type:
-    weight: 6
+    weight: 2
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  links:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  kec_event_related: true
+  links: true

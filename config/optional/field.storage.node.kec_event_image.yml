@@ -1,9 +1,12 @@
+uuid: d28d4a99-6aa0-409b-b525-8f820fee9e96
 langcode: en
 status: true
 dependencies:
   module:
     - media
     - node
+_core:
+  default_config_hash: ESv9RovZTM8hFxH948NP6ZkR8kIfhNk_pmbd4STwOs0
 id: node.kec_event_image
 field_name: kec_event_image
 entity_type: node

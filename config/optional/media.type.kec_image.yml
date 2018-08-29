@@ -1,6 +1,9 @@
+uuid: 27820d05-fdf8-424d-bfdd-b4828ea91f05
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: FfjdwQPhdo_A8kOZOJnoyRNegbmLLSEVrzDqXolmjfo
 id: kec_image
 label: Image
 description: 'Event Image'

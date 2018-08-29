@@ -1,3 +1,4 @@
+uuid: f98c2179-147e-4c27-834f-dc4ce8594ca0
 langcode: en
 status: true
 dependencies:
@@ -6,11 +7,13 @@ dependencies:
     - node.type.kec_event
   module:
     - text
+_core:
+  default_config_hash: csyufZwdMWCSmXVTIAJnSSwzFK_5KjPo1rKGMao-ygM
 id: node.kec_event.kec_body
 field_name: kec_body
 entity_type: node
 bundle: kec_event
-label: Event Description
+label: 'Event Description'
 description: ''
 required: false
 translatable: true
