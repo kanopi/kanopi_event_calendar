@@ -20,9 +20,11 @@ dependencies:
   - date_recur:date_recur
   - entity_browser:entity_browser
   - entity_browser:entity_browser_entity_form
+  - field_group:field_group
   - metatag:metatag
   - metatag:metatag_open_graph
   - metatag:metatag_twitter_cards
   - pathauto:pathauto
+  - scheduler:scheduler
   - schema_metatag:schema_metatag
   - schema_metatag:schema_event
