@@ -1,14 +1,9 @@
-uuid: 79955e0e-6642-4189-9d79-8b3cee782d31
 langcode: en
 status: true
 dependencies:
   module:
-    - menu_ui
     - scheduler
 third_party_settings:
-  menu_ui:
-    available_menus: {  }
-    parent: ''
   scheduler:
     expand_fieldset: when_required
     fields_display_mode: vertical_tab
@@ -20,8 +15,6 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-_core:
-  default_config_hash: ioCNqge9krzItsLX-uPFyCKRakJp-cqKbicnfwr18p4
 name: Event
 type: kec_event
 description: 'An individual event.'

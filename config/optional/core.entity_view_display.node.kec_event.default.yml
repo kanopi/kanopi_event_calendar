@@ -1,10 +1,9 @@
-uuid: 4cda6664-4ef1-4664-8fe0-f567bb80fb49
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.kec_event.field_zzzz_event_address
-    - field.field.node.kec_event.field_zzzz_event_date
+    - field.field.node.kec_event.kec_event_address
+    - field.field.node.kec_event.kec_event_date
     - field.field.node.kec_event.kec_body
     - field.field.node.kec_event.kec_event_image
     - field.field.node.kec_event.kec_event_register
@@ -17,21 +16,19 @@ dependencies:
     - link
     - text
     - user
-_core:
-  default_config_hash: gbw0mdWyIvD1uSjWkIpnQ8azxRuZnMtIQviVhshYaHA
 id: node.kec_event.default
 targetEntityType: node
 bundle: kec_event
 mode: default
 content:
-  field_zzzz_event_address:
+  kec_event_address:
     weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: address_default
     region: content
-  field_zzzz_event_date:
+  kec_event_date:
     weight: 3
     label: hidden
     settings:

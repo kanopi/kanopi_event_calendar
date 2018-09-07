@@ -1,11 +1,10 @@
-uuid: b7fc14f4-b3b4-499a-94cf-af8e2f9b9446
 langcode: en
 status: true
 dependencies:
   config:
     - entity_browser.browser.media_browser
-    - field.field.node.kec_event.field_zzzz_event_address
-    - field.field.node.kec_event.field_zzzz_event_date
+    - field.field.node.kec_event.kec_event_address
+    - field.field.node.kec_event.kec_event_date
     - field.field.node.kec_event.kec_body
     - field.field.node.kec_event.kec_event_image
     - field.field.node.kec_event.kec_event_register
@@ -24,12 +23,12 @@ dependencies:
     - text
 third_party_settings:
   field_group:
-    group_zzzz_administration:
+    kec_administration:
       children:
-        - group_zzzz_summary
-        - group_zzzz_location
-        - group_zzzz_categorize
-        - group_zzzz_related_content
+        - kec_summary
+        - kec_location
+        - kec_categorize
+        - kec_related_content
       parent_name: ''
       weight: 0
       format_type: tabs
@@ -38,14 +37,14 @@ third_party_settings:
         classes: ''
         direction: horizontal
       label: Administration
-    group_zzzz_summary:
+    kec_summary:
       children:
         - title
-        - field_zzzz_event_date
+        - kec_event_date
         - kec_body
         - kec_event_register
         - kec_event_image
-      parent_name: group_zzzz_administration
+      parent_name: kec_administration
       weight: 20
       format_type: tab
       format_settings:
@@ -55,10 +54,10 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Summary
-    group_zzzz_related_content:
+    kec_related_content:
       children:
         - kec_event_related
-      parent_name: group_zzzz_administration
+      parent_name: kec_administration
       weight: 23
       format_type: tab
       format_settings:
@@ -68,10 +67,10 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Related Content'
-    group_zzzz_categorize:
+    kec_categorize:
       children:
         - kec_event_type
-      parent_name: group_zzzz_administration
+      parent_name: kec_administration
       weight: 22
       format_type: tab
       format_settings:
@@ -81,10 +80,10 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Categorize
-    group_zzzz_location:
+    kec_location:
       children:
-        - field_zzzz_event_address
-      parent_name: group_zzzz_administration
+        - kec_event_address
+      parent_name: kec_administration
       weight: 21
       format_type: tab
       format_settings:
@@ -94,8 +93,6 @@ third_party_settings:
         description: ''
         required_fields: true
       label: Location
-_core:
-  default_config_hash: VcsrxQ0ulQwS7HYwxXNkvHlsFOjPA3QdJvIIn1EEwJk
 id: node.kec_event.default
 targetEntityType: node
 bundle: kec_event
@@ -107,14 +104,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_zzzz_event_address:
+  kec_event_address:
     weight: 4
     settings:
       default_country: US
     third_party_settings: {  }
     type: address_default
     region: content
-  field_zzzz_event_date:
+  kec_event_date:
     weight: 1
     settings:
       timezone_override: ''

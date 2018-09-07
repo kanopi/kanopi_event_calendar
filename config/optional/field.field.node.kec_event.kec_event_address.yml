@@ -4,15 +4,32 @@ dependencies:
   config:
     - field.storage.node.kec_event_address
     - node.type.kec_event
+  module:
+    - address
 id: node.kec_event.kec_event_address
 field_name: kec_event_address
 entity_type: node
 bundle: kec_event
-label: Address
-description: 'Address of the event.'
+label: 'Event Address'
+description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  available_countries:
+    US: US
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: hidden
+    additionalName:
+      override: hidden
+    familyName:
+      override: hidden
+    sortingCode:
+      override: hidden
+    dependentLocality:
+      override: hidden
+  fields: {  }
+field_type: address

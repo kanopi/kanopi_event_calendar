@@ -1,9 +1,8 @@
-uuid: e92036e7-5c0f-4f53-a531-2ebd01f153d9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_zzzz_event_date
+    - field.storage.node.kec_event_date
     - node.type.kec_event
   module:
     - calendar
@@ -73,7 +72,7 @@ display:
           multiday_theme: '1'
           multiday_hidden:
             title: title
-            field_zzzz_event_date: field_zzzz_event_date
+            kec_event_date: kec_event_date
           granularity_links:
             day: ''
             week: ''
@@ -138,10 +137,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_zzzz_event_date:
-          id: field_zzzz_event_date
-          table: date_recur__node__field_zzzz_event_date
-          field: field_zzzz_event_date
+        kec_event_date:
+          id: kec_event_date
+          table: date_recur__node__kec_event_date
+          field: kec_event_date
           relationship: none
           group_type: group
           admin_label: ''
@@ -229,10 +228,10 @@ display:
           entity_field: type
           plugin_id: bundle
       sorts:
-        field_zzzz_event_date_value:
-          id: field_zzzz_event_date_value
-          table: date_recur__node__field_zzzz_event_date
-          field: field_zzzz_event_date_value
+        kec_event_date_value:
+          id: kec_event_date_value
+          table: date_recur__node__kec_event_date
+          field: kec_event_date_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -252,17 +251,17 @@ display:
           admin_label: ''
           empty: true
           tokenize: 1
-          content: '{{ arguments.field_zzzz_event_date_value_year_month }}'
+          content: '{{ arguments.kec_event_date_value_year_month }}'
           pager_embed: 1
           plugin_id: calendar_header
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments:
-        field_zzzz_event_date_value_year_month:
-          id: field_zzzz_event_date_value_year_month
-          table: date_recur__node__field_zzzz_event_date
-          field: field_zzzz_event_date_value_year_month
+        kec_event_date_value_year_month:
+          id: kec_event_date_value_year_month
+          table: date_recur__node__kec_event_date
+          field: kec_event_date_value_year_month
           relationship: none
           group_type: group
           admin_label: ''
@@ -303,7 +302,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_zzzz_event_date'
+        - 'config:field.storage.node.kec_event_date'
   calendar_block_day:
     display_plugin: block
     id: calendar_block_day
@@ -329,7 +328,7 @@ display:
           multiday_theme: '1'
           multiday_hidden:
             title: title
-            field_zzzz_event_date: field_zzzz_event_date
+            kec_event_date: kec_event_date
           granularity_links:
             day: ''
             week: ''
@@ -358,7 +357,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_zzzz_event_date'
+        - 'config:field.storage.node.kec_event_date'
   calendar_block_month:
     display_plugin: block
     id: calendar_block_month
@@ -378,7 +377,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_zzzz_event_date'
+        - 'config:field.storage.node.kec_event_date'
   calendar_block_week:
     display_plugin: block
     id: calendar_block_week
@@ -403,7 +402,7 @@ display:
           multiday_theme: '1'
           multiday_hidden:
             title: title
-            field_zzzz_event_date: field_zzzz_event_date
+            kec_event_date: kec_event_date
           granularity_links:
             day: ''
             week: ''
@@ -433,7 +432,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_zzzz_event_date'
+        - 'config:field.storage.node.kec_event_date'
   calendar_json_api:
     display_plugin: rest_export
     id: calendar_json_api
@@ -450,7 +449,7 @@ display:
             title:
               alias: name
               raw_output: true
-            field_zzzz_event_date:
+            kec_event_date:
               alias: date
               raw_output: true
       display_description: ''
@@ -464,7 +463,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_zzzz_event_date'
+        - 'config:field.storage.node.kec_event_date'
   calendar_page_day:
     display_plugin: page
     id: calendar_page_day
@@ -491,7 +490,7 @@ display:
           multiday_theme: '1'
           multiday_hidden:
             title: title
-            field_zzzz_event_date: field_zzzz_event_date
+            kec_event_date: kec_event_date
           granularity_links:
             day: ''
             week: ''
@@ -520,7 +519,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_zzzz_event_date'
+        - 'config:field.storage.node.kec_event_date'
   calendar_page_month:
     display_plugin: page
     id: calendar_page_month
@@ -540,7 +539,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_zzzz_event_date'
+        - 'config:field.storage.node.kec_event_date'
   calendar_page_week:
     display_plugin: page
     id: calendar_page_week
@@ -567,7 +566,7 @@ display:
           multiday_theme: '1'
           multiday_hidden:
             title: title
-            field_zzzz_event_date: field_zzzz_event_date
+            kec_event_date: kec_event_date
           granularity_links:
             day: ''
             week: ''
@@ -596,4 +595,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_zzzz_event_date'
+        - 'config:field.storage.node.kec_event_date'

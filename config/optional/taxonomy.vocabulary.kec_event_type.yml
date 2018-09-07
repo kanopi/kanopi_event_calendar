@@ -1,9 +1,6 @@
-uuid: cf86b24d-d55b-4a0d-9949-ed9dbc4c1a3d
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: srUKhmx5pt73acFkqaGsEuzH6rvt2pj9zIrRacqF0Fo
 name: 'Event Type'
 vid: kec_event_type
 description: 'Taxonomy for sorting events'

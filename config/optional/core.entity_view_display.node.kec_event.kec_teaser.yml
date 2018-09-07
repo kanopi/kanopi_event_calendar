@@ -1,11 +1,10 @@
-uuid: 660a2d5b-14c2-40c3-bbcb-5dcedd944f66
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.kec_teaser
-    - field.field.node.kec_event.field_zzzz_event_address
-    - field.field.node.kec_event.field_zzzz_event_date
+    - field.field.node.kec_event.kec_event_address
+    - field.field.node.kec_event.kec_event_date
     - field.field.node.kec_event.kec_body
     - field.field.node.kec_event.kec_event_image
     - field.field.node.kec_event.kec_event_register
@@ -14,9 +13,6 @@ dependencies:
     - node.type.kec_event
   module:
     - date_recur
-    - user
-_core:
-  default_config_hash: eiP6AzHtyaYYgFDOMsjfrK-d9DseiVoSP8QCgbrDf7Q
 id: node.kec_event.kec_teaser
 targetEntityType: node
 bundle: kec_event
@@ -25,7 +21,7 @@ content:
   field_links:
     weight: 100
     region: content
-  field_zzzz_event_date:
+  kec_event_date:
     type: date_recur_default_formatter
     weight: 0
     region: content
@@ -45,7 +41,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_zzzz_event_address: true
+  kec_event_address: true
   kec_body: true
   kec_event_image: true
   kec_event_register: true

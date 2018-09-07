@@ -2,16 +2,14 @@ langcode: en
 status: true
 dependencies:
   module:
+    - address
     - node
 id: node.kec_event_address
 field_name: kec_event_address
 entity_type: node
-type: string
-settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+type: address
+settings: {  }
+module: address
 locked: false
 cardinality: 1
 translatable: true

@@ -1,12 +1,9 @@
-uuid: df48ae49-d715-4f4e-9438-56d05e83b5f4
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - text
-_core:
-  default_config_hash: 7JMOyd_lNzSVpELfuHJbKN1g1cdHMbnlWrwhmWA_oTM
 id: node.kec_body
 field_name: kec_body
 entity_type: node

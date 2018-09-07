@@ -1,11 +1,8 @@
-uuid: b2d8c4c5-917a-45bd-a349-46886220f522
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: kdpQoH8WQE0NblA4NHeEKJfP4HvF0YQbJ_txxar7TWM
 id: node.kec_event_related
 field_name: kec_event_related
 entity_type: node

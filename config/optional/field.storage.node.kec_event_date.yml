@@ -2,15 +2,16 @@ langcode: en
 status: true
 dependencies:
   module:
-    - datetime
+    - date_recur
     - node
 id: node.kec_event_date
 field_name: kec_event_date
 entity_type: node
-type: datetime
+type: date_recur
 settings:
   datetime_type: datetime
-module: datetime
+  occurrence_handler_plugin: date_recur_occurrence_handler
+module: date_recur
 locked: false
 cardinality: 1
 translatable: true

@@ -1,12 +1,9 @@
-uuid: 7e893c64-8df4-4544-91cf-5a1ff8ac1ae8
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - taxonomy
-_core:
-  default_config_hash: HrSXjJQbJQGPu21ODCc-g_HqmLUyMRbAF212WucNGrc
 id: node.kec_event_type
 field_name: kec_event_type
 entity_type: node
