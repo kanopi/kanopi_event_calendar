@@ -21,16 +21,6 @@
     "commerceguys/addressing": "^1.0.0"
   },
   "config": {
-    "preferred-install": "dist",
-    "sort-packages": true
-    },
-  "scripts": {
-    "post-update-cmd": [
-      "@clean-vcs"
-    ],
-    "post-install-cmd": [
-      "@clean-vcs"
-    ],
-  "clean-vcs": "find vendor -type d | grep .git | xargs rm -rf"
+    "preferred-install": "dist"
   }
 }
