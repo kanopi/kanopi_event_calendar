@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.kec_event.kec_body
     - field.field.node.kec_event.kec_event_address
     - field.field.node.kec_event.kec_event_date
-    - field.field.node.kec_event.kec_body
     - field.field.node.kec_event.kec_event_image
     - field.field.node.kec_event.kec_event_register
     - field.field.node.kec_event.kec_event_related
@@ -21,6 +21,13 @@ targetEntityType: node
 bundle: kec_event
 mode: default
 content:
+  kec_body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   kec_event_address:
     weight: 4
     label: hidden
@@ -41,13 +48,6 @@ content:
       count_per_item: 0
     third_party_settings: {  }
     type: date_recur_default_formatter
-    region: content
-  kec_body:
-    label: hidden
-    type: text_default
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
     region: content
   kec_event_image:
     type: entity_reference_entity_view

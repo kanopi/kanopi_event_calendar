@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - views.view.media_entity_browser
+    - views.view.event_image_browser
   module:
     - entity_browser_entity_form
     - views
@@ -11,8 +11,8 @@ label: 'Event Image Media Browser'
 display: iframe
 display_configuration:
   width: 100%
-  height: '500'
-  link_text: 'Select entities'
+  height: '600'
+  link_text: 'Select images'
   auto_open: true
 selection_display: no_display
 selection_display_configuration: {  }
@@ -21,21 +21,21 @@ widget_selector_configuration: {  }
 widgets:
   ef230a8c-d630-4492-852a-c99d41f5dbda:
     settings:
-      view: media_entity_browser
-      view_display: entity_browser_1
-      submit_text: 'Select media'
+      view: event_image_browser
+      view_display: event_image_browser
+      submit_text: Select
       auto_select: false
     uuid: ef230a8c-d630-4492-852a-c99d41f5dbda
-    weight: -10
+    weight: -9
     label: 'Choose existing'
     id: view
   a9db4b73-418c-447a-885c-6ebfe55c5759:
     settings:
       entity_type: media
-      bundle: image
-      form_mode: entity_browser
-      submit_text: 'Save image'
+      bundle: kec_image
+      form_mode: kec_inline
+      submit_text: Save
     uuid: a9db4b73-418c-447a-885c-6ebfe55c5759
-    weight: -9
-    label: 'Create new image'
+    weight: -10
+    label: Upload
     id: entity_form
