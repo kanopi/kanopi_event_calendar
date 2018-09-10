@@ -2,8 +2,8 @@ langcode: en
 status: true
 dependencies: {  }
 id: kec_image
-label: Image
-description: 'Event Image'
+label: 'Event Image'
+description: 'An image that represents the event.'
 source: image
 queue_thumbnail_downloads: false
 new_revision: true

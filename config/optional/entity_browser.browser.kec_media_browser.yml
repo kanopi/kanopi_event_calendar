@@ -19,23 +19,23 @@ selection_display_configuration: {  }
 widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
-  70d53cd9-18f3-4f8c-b023-fe6aaa36603e:
+  ef230a8c-d630-4492-852a-c99d41f5dbda:
     settings:
       view: media_entity_browser
       view_display: entity_browser_1
-      submit_text: 'Select file'
+      submit_text: 'Select media'
       auto_select: false
-    uuid: 70d53cd9-18f3-4f8c-b023-fe6aaa36603e
-    weight: 1
-    label: 'Select File'
+    uuid: ef230a8c-d630-4492-852a-c99d41f5dbda
+    weight: -10
+    label: 'Choose existing'
     id: view
-  a457168f-871a-4bc5-aa79-8f42a751ede1:
+  a9db4b73-418c-447a-885c-6ebfe55c5759:
     settings:
       entity_type: media
       bundle: image
-      form_mode: default
-      submit_text: 'Save file'
-    uuid: a457168f-871a-4bc5-aa79-8f42a751ede1
-    weight: 2
-    label: 'Upload File'
+      form_mode: entity_browser
+      submit_text: 'Save image'
+    uuid: a9db4b73-418c-447a-885c-6ebfe55c5759
+    weight: -9
+    label: 'Create new image'
     id: entity_form
