@@ -113,6 +113,8 @@ MAINTAINERS
 
 Current maintainers
   * [thejimbirch](https://www.drupal.org/u/thejimbirch)
+  
+  With help and guidances from [akalata](https://www.drupal.org/u/akalata)
 
 Supporting organizations
   * [Kanopi Studios](https://www.kanopistudios.com)
