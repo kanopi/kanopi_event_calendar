@@ -14,7 +14,21 @@ label: 'Event Address'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    country_code: US
+    langcode: null
+    administrative_area: ''
+    locality: ''
+    dependent_locality: ''
+    postal_code: ''
+    sorting_code: ''
+    address_line1: ''
+    address_line2: ''
+    organization: ''
+    given_name: ''
+    additional_name: ''
+    family_name: ''
 default_value_callback: ''
 settings:
   available_countries:
@@ -27,9 +41,21 @@ settings:
       override: hidden
     familyName:
       override: hidden
+    organization:
+      override: optional
+    addressLine1:
+      override: optional
+    addressLine2:
+      override: optional
+    postalCode:
+      override: optional
     sortingCode:
       override: hidden
     dependentLocality:
       override: hidden
+    locality:
+      override: optional
+    administrativeArea:
+      override: optional
   fields: {  }
 field_type: address
