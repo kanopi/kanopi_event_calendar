@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: kec_event_image_preview
+label: 'Event Image Preview'
+effects:
+  ecb154a9-aefa-4a04-86c9-70455374ca5c:
+    uuid: ecb154a9-aefa-4a04-86c9-70455374ca5c
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 350
+      height: 200
+      crop_type: focal_point

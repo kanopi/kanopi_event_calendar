@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: kec_event_image
+label: 'Event Image'
+effects:
+  93763696-27bc-4eb6-b3cf-ae372fdb07a0:
+    uuid: 93763696-27bc-4eb6-b3cf-ae372fdb07a0
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 1080
+      crop_type: focal_point
