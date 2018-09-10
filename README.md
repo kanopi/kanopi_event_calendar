@@ -91,7 +91,22 @@ INSTALLATION
 CONFIGURATION
 -------------
 
-  * 
+  * In your site's composer file, apply these patches:
+  ```
+  "patches": {
+            "drupal/date_recur": {
+                "#2902733 Default weekday checked is off by one": "https://www.drupal.org/files/issues/default_weekday_offset_fix-2902733-2.patch",
+                "#2820803 Patch for calendar module integration": "https://www.drupal.org/files/issues/2820803-date-recur_calendar-integration_8.patch",
+                "WIP: Remove lines from 2920803-8 to get event time working": "https://raw.githubusercontent.com/kanopi/kanopi_event_calendar/8.x-1.x/patches/date_recur--event_time.patch",
+                "WIP: Support multi-day events in date_recur's calendar. Should be included in updates to 2920803-8": "https://raw.githubusercontent.com/kanopi/kanopi_event_calendar/8.x-1.x/patches/date_recur--multiday_events.patch",
+                "WIP: PHP Notice on views with Recurring Date field": "https://raw.githubusercontent.com/kanopi/kanopi_event_calendar/8.x-1.x/patches/date_recur--view-notice-undefined-property.patch"
+            },
+            "drupal/calendar": {
+                "#2699477 calendar end dates": "https://www.drupal.org/files/issues/2699477-66_0.patch",
+                "#2604546 time zone handling": "https://www.drupal.org/files/issues/2604546-16.patch"
+            }
+        },
+  ```
 
 MAINTAINERS
 -----------
