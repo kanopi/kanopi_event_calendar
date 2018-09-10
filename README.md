@@ -81,8 +81,10 @@ INSTALLATION
           "url": "https://github.com/kanopi/kanopi_event_calendar"
         }
   ```
-  * Add the module with dependencies:
+  * Add these modules with dependencies:
   ```
+    composer require drupal/date_recur:dev-1.x#8bd0ca37
+    composer require drupal/calendar:dev-1.x#73e2979f
     composer require kanopi/kanopi_event_calendar --with-dependencies
   ```
   * Verify installation by visiting /admin/structure/types and seeing your new 
