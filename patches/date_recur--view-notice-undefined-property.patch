@@ -1,7 +1,7 @@
 diff --git a/src/Plugin/views/style/DateRecurCalendar.php b/src/Plugin/views/style/DateRecurCalendar.php
 index 84ccbda1..b232c2f9 100644
---- a/docroot/modules/contrib/date_recur/src/Plugin/views/style/DateRecurCalendar.php
-+++ b/docroot/modules/contrib/date_recur/src/Plugin/views/style/DateRecurCalendar.php
+--- a/src/Plugin/views/style/DateRecurCalendar.php
++++ b/src/Plugin/views/style/DateRecurCalendar.php
 @@ -1036,7 +1036,8 @@ public function calendarBuildWeekDay($wday, &$multiday_buckets, &$singleday_buck
            foreach ($day as $time => $hour) {
              foreach ($hour as $key => $item) {
