@@ -12,3 +12,10 @@ index 84ccbda1..b232c2f9 100644
              }
            }
          }
+@@ -1322,4 +1323,4 @@ protected function viewOptionsForGranularity($granularity) {
+   }
+ 
+ 
+-}
+\ No newline at end of file
++}
