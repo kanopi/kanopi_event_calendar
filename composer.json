@@ -14,6 +14,7 @@
     "drupal/address": "^1.0.0",
     "drupal/date_recur": "dev-1.x#8bd0ca37",
     "drupal/calendar": "dev-1.x#73e2979f",
+    "drupal/field_group": "^1.0",
     "drupal/focal_point": "^1.0@beta",
     "drupal/media_entity_browser": "^2.0",
     "drupal/metatag": "^1.5",
