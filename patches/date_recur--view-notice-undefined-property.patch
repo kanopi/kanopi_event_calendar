@@ -1,4 +1,4 @@
-diff --git a/docroot/modules/contrib/date_recur/src/Plugin/views/style/DateRecurCalendar.php b/docroot/modules/contrib/date_recur/src/Plugin/views/style/DateRecurCalendar.php
+diff --git a/src/Plugin/views/style/DateRecurCalendar.php b/src/Plugin/views/style/DateRecurCalendar.php
 index 84ccbda1..b232c2f9 100644
 --- a/docroot/modules/contrib/date_recur/src/Plugin/views/style/DateRecurCalendar.php
 +++ b/docroot/modules/contrib/date_recur/src/Plugin/views/style/DateRecurCalendar.php
