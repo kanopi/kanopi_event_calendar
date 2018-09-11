@@ -81,11 +81,11 @@ INSTALLATION
           "url": "https://github.com/kanopi/kanopi_event_calendar"
         }
   ```
-  * Add these modules with dependencies:
+  * Add these modules:
   ```
     composer require drupal/date_recur:dev-1.x#8bd0ca37
     composer require drupal/calendar:dev-1.x#73e2979f
-    composer require kanopi/kanopi_event_calendar --with-dependencies
+    composer require kanopi/kanopi_event_calendar
   ```
   * Verify installation by visiting /admin/structure/types and seeing your new 
   Event Content type.
@@ -99,7 +99,7 @@ CONFIGURATION
             "drupal/calendar": {
                 "#2699477 calendar end dates": "https://www.drupal.org/files/issues/2699477-66_0.patch",
                 "#2604546 time zone handling": "https://www.drupal.org/files/issues/2604546-16.patch",
-                "#2938872 Calendar not display because of: .size() deprecated": "https://www.drupal.org/files/issues/2938872-replace-size-by-length_0.patch"
+                "#2901594 Week view not displaying correctly": "https://www.drupal.org/files/issues/week-week-day-display-issues-2901594-15.patch"
             },
             "drupal/date_recur": {
                 "#2902733 Default weekday checked is off by one": "https://www.drupal.org/files/issues/default_weekday_offset_fix-2902733-2.patch",
