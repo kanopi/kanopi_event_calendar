@@ -14,7 +14,7 @@ bundle: kec_image
 mode: kec_preview
 content:
   kec_media_image:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       image_style: kec_event_image_preview
@@ -22,15 +22,8 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-  name:
-    type: string
-    weight: 0
-    region: content
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden:
   created: true
+  name: true
   thumbnail: true
   uid: true

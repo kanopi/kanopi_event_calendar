@@ -1,9 +1,38 @@
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_form_mode.media.kec_inline
+    - field.field.media.kec_image.kec_media_image
+    - image.style.kec_event_image_preview
+    - media.type.kec_image
   module:
-    - media
-id: media.kec_inline
-label: Inline
+    - focal_point
+id: media.kec_image.kec_inline
 targetEntityType: media
-cache: true
+bundle: kec_image
+mode: kec_inline
+content:
+  kec_media_image:
+    type: image_focal_point
+    weight: 1
+    region: content
+    settings:
+      preview_image_style: kec_event_image_preview
+      preview_link: true
+      offsets: '50,50'
+      progress_indicator: throbber
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  status: true
+  uid: true

@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.media_browser
+    - entity_browser.browser.kec_media_browser
     - field.field.node.kec_event.kec_event_address
     - field.field.node.kec_event.kec_event_date
     - field.field.node.kec_event.kec_body
@@ -13,7 +13,6 @@ dependencies:
     - node.type.kec_event
   module:
     - address
-    - content_moderation
     - date_recur
     - entity_browser
     - field_group
@@ -130,14 +129,15 @@ content:
   kec_event_image:
     weight: 4
     settings:
-      entity_browser: media_browser
-      field_widget_display: label
+      entity_browser: kec_media_browser
+      field_widget_display: rendered_entity
       field_widget_edit: true
       field_widget_remove: true
       field_widget_replace: true
+      open: true
       selection_mode: selection_append
-      open: false
-      field_widget_display_settings: {  }
+      field_widget_display_settings:
+        view_mode: kec_preview
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
