@@ -4,6 +4,6 @@ dependencies:
   module:
     - node
 id: node.kec_teaser
-label: Teaser
+label: Event Teaser
 targetEntityType: node
 cache: true
